@@ -1,0 +1,49 @@
+type: custom:apexcharts-card
+experimental:
+  color_threshold: true
+show:
+  last_updated: false
+header:
+  standard_format: false
+  show: true
+  show_states: true
+  colorize_states: true
+graph_span: 10d
+apex_config:
+  chart:
+    height: 190px
+series:
+  - entity: sensor.hydro_quebec_demande_de_puissance_reseau
+    name: "Demande"
+    type: area
+    group_by:
+      func: last
+      duration: 1d
+    stroke_width: 5
+    show:
+      extremas: true
+      header_color_threshold: true
+      name_in_header: true
+      legend_value: false
+    color_threshold:
+      - value: 10000
+        color: "green"
+      - value: 20000
+        color: "yellow"
+      - value: 30000
+        color: "orange"
+      - value: 40000
+  - entity: sensor.hydro_quebec_production_total
+    name: "Production"
+    type: line
+    group_by:
+      func: last
+      duration: 1d
+    stroke_width: 5
+    show:
+      extremas: true
+      header_color_threshold: false
+      name_in_header: true
+      legend_value: false
+card_mod:
+  class: middle-contained

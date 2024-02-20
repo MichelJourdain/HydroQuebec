@@ -1,0 +1,71 @@
+http:
+  cors_allowed_origins:
+    - https://unpkg.com
+    - https://unpkg.com/lit-html@1/directives/style-map.js?module
+    - https://unpkg.com/lit-html@1/directives/if-defined?module
+    - https://unpkg.com/lit-html@%5E1.0.0?module
+    - https://unpkg.com/lit-html@1/directives/style-map.js?module
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.48.0.0/16
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+panel_iframe:
+  vscode:
+    title: VSCode
+    icon: mdi:microsoft-visual-studio-code
+    url: https://vscode-k3s-ha.int.servinfo.stba
+  influxdb:
+    title: InfluxDB
+    icon: mdi:chart-areaspline
+    url:  https://influxdb-k3s-ha.int.servinfo.stba
+  esphome:
+    title: ESPHome
+    icon: mdi:chart-timeline
+    url: https://esphome-k3s-ha.int.servinfo.stba/
+  grafana:
+    title: Grafana
+    icon: mdi:chart-areaspline
+    url: https://grafana-k3s-ha.int.servinfo.stba/
+  zigbee2mqtt:
+    title: Zigbee2MQTT
+    icon: mdi:zigbee
+    url: https://zigbee2mqtt-k3s-ha.int.servinfo.stba
+  zwavejsui:
+    title: ZWave-JS-UI
+    icon: mdi:z-wave
+    url: https://zwaver1.int.servinfo.stba:8091/
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+mqtt: !include mqtt_sensors.yaml
+
+lovelace:
+  mode: storage
+  dashboards:
+    hydro-quebec:
+      filename: Hydro-Quebec-2.yaml
+      title: Hydro-Québec
+      icon: 'ios:hydro-quebec-logo#fullcolor'
+      show_in_sidebar: true
+      mode: yaml
+    hydro-quebec-test:
+      filename: Hydro-Quebec-vue.yaml
+      title: HQTest
+      icon: 'ios:hydro-quebec-logo#fullcolor'
+      show_in_sidebar: true
+      mode: yaml
+    hydro-quebec-alt:
+      filename: Vue-Hydro-Quebec.yaml
+      title: Hydro-Quebec-Alt
+      icon: 'ios:hydro-quebec-logo#fullcolor'
+      show_in_sidebar: true
+      mode: yaml

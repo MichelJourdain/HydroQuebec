@@ -1,0 +1,56 @@
+# Maison moyennes
+
+type: vertical-stack
+cards:
+  - type: markdown
+    content: "# Moyennes"
+    card_mod:
+      class: bar
+
+  - type: custom:mushroom-template-card
+    primary: "Coût Jour"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_daily_bill_mean')}} $"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:calendar-today-outline
+    icon_color: yellow
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
+
+  - type: custom:mushroom-template-card
+    primary: "kWh Jour"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_daily_consumption_mean') }} kWh"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:lightning-bolt
+    icon_color: yellow
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
+
+  - type: custom:mushroom-template-card
+    primary: "Coût kWh"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_kwh_cost_mean')}} $"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:currency-usd
+    icon_color: yellow
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained

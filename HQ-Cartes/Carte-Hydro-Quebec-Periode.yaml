@@ -1,0 +1,56 @@
+# Maison période
+
+type: vertical-stack
+cards:
+  - type: markdown
+    content: "# Période"
+    card_mod:
+      class: bar
+
+  - type: custom:mushroom-template-card
+    primary: "Jours périodes"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_current_day') }} jours sur {{states('sensor.hydroqc_st_basile_current_billing_period_duration') }}"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:calendar-month
+    icon_color: cyan
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
+
+  - type: custom:mushroom-template-card
+    primary: "Jours d'hiver"
+    secondary: "{{states('sensor.hydroqc_st_basile_number_of_winter_days')}} jours sur 121"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:weather-snowy-heavy
+    icon_color: cyan
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
+
+  - type: custom:mushroom-template-card
+    primary: "Heures de pointes"
+    secondary: "{{states('sensor.hydroqc_st_basile_number_of_critical_hours')}} heures sur 100"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:clock-time-four-outline
+    icon_color: cyan
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained

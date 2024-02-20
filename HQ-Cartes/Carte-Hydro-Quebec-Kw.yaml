@@ -1,0 +1,55 @@
+# Maison kwh
+
+type: vertical-stack
+cards:
+  - type: markdown
+    content: "# kWh"
+    card_mod:
+      class: bar
+
+  - type: custom:mushroom-template-card
+    primary: "Total - Prévus"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_total_consumption') }} kWh sur {{states('sensor.hydroqc_st_basile_current_billing_period_projected_total_consumption') }} prévus"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:home-lightning-bolt
+    icon_color: red
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
+
+  - type: custom:mushroom-template-card
+    primary: "Normale"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_lower_price_consumption')}} kWh"
+    multiline_secondary: true
+    icon: mdi:home-minus
+    icon_color: red
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
+
+  - type: custom:mushroom-template-card
+    primary: "Pointe"
+    secondary: "{{states('sensor.hydroqc_st_basile_current_billing_period_higher_price_consumption')}} kWh"
+    fill_container: true
+    multiline_secondary: true
+    icon: mdi:home-plus
+    icon_color: red
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    double_tap_action:
+      action: none
+    card_mod:
+      class: middle-contained
