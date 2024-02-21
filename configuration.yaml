@@ -52,9 +52,9 @@ lovelace:
   mode: storage
   dashboards:
     hydro-quebec:
-      filename: Hydro-Quebec-2.yaml
+      filename: Vue-Hydro-Quebec.yaml
       title: Hydro-Québec
-      icon: 'ios:hydro-quebec-logo#fullcolor'
+      icon: mdi:hydro-power
       show_in_sidebar: true
       mode: yaml
     hydro-quebec-test:

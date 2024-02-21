@@ -1,20 +1,21 @@
-# Sous-Vue Hydro-Québec
-
-theme: LCARS Picard I
 title: Hydro-Québec
-path: sous-vue-hydro-quebec
-icon: ios:hydro-quebec#fullcolor
-type: panel
-subview: true
-visible: false
-badges: []
-cards:
-  - type: custom:tabbed-card
-    styles:
+
+views:
+
+ - title: Hydro-Québec
+   path: sous-vue-hydro-quebec
+   icon: ios:hydro-quebec#fullcolor
+   type: panel
+   subview: false
+   visible: true
+   badges: []
+   cards:
+   - type: custom:tabbed-card
+     styles:
       --mdc-theme-primary: yellow
       --mdc-tab-text-label-color-default: lightblue
-    options: {}
-    tabs:
+     options: {}
+     tabs:
       - card:
           type: vertical-stack
           cards:
